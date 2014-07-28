@@ -1,3 +1,13 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
-<p>Sample App</p>
+<% provide(:title, 'Home') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample App | <%= yield(:title) %></title>
+  </head>
+  <body>
+    <h1>Sample App</h1>
+    <p>
+    sample application.
+    </p>
+  </body>
+</html>

@@ -15,6 +15,10 @@ describe "Static pages" do
       visit '/static_pages/home'
       expect(page).to have_content('Sample App')
     end
+    it "should have the right title" do
+      visit '/static_pages/home'
+      expect(page).to have_title("Sample App | Home")
+    end
   end
 
   describe "About page" do
@@ -23,4 +27,6 @@ describe "Static pages" do
       expect(page).to have_content('About Us')
     end
   end
+
+
 end
