@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.1.4'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sprockets', '~> 2.12.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
