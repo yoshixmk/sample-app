@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 4.2.0'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
