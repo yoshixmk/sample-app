@@ -8,4 +8,21 @@ describe User do
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+
+  it { should be_valid } #空文字列以外で通る
+
+  describe "when name is not present" do
+    before { @user.name = " " }
+    it { should_not be_valid } #空文字列で通る
+  end
+
+  describe "when email is not present" do
+    before { @user.email = " " }
+    it { should_not be_valid } #空文字列で通る
+  end
+
+  describe "when name is too long" do
+    before { @user.name = "a" * 51 }
+    it { should_not be_valid }
+  end
 end
