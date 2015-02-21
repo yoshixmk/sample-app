@@ -115,4 +115,9 @@ describe User do
     before{ @user.email = "foo@bar..com" }
     it { should_not be_valid}
   end
+
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
 end
