@@ -139,11 +139,10 @@ aside {
       margin-top: 0px;
     }
   }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
 }
 
 /* forms */
@@ -207,10 +206,4 @@ input {
 .gravatar {
   float: left;
   margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
 }
