@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 #ruby '2.1.5'
 
 gem 'rails', '~> 4.2.0'
-gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sprockets', '2.11.0'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '~> 3.0.7'
