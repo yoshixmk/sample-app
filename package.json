@@ -17,10 +17,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "fix":"npm run -s format && npm run -s lint:fix",
-    "format":"prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'"
+    "format": "prettier --write --loglevel=warn 'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
+    "fix": "npm run -s format && npm run -s lint:es:fix && npm run -s lint:style:fix",
+    "lint": "npm run -s lint:es; npm run -s lint:style",
+    "lint:es": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:es:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:style":"stylelint 'src/**/*.{css,less,sass,scss}'",
+    "lint:style:fix":"stylelint --fix 'src/**/*.{css,less,sass,scss}'"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +48,10 @@
     "@types/react-dom": "^17.0.3",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recess-order": "^2.3.0",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-order": "^4.1.0"
   }
 }
