@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter';
+import Timer from './Timer';
 
 const App: FC = () => (
   <div className="App">
@@ -20,6 +21,7 @@ const App: FC = () => (
       </a>
     </header>
     <Counter />
+    <Timer limit={60} />
   </div>
 );
 
