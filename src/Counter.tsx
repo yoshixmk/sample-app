@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { useState, VFC } from 'react';
 import { Card, Statistic, Button } from 'semantic-ui-react';
 
 type Props = {
 };
 
 
-const Counter: FC<Props> = () => {
+const Counter: VFC<Props> = () => {
   const [count, setCount] = useState(0);
 
   const reset = (): void => {

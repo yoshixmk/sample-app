@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React, { VFC } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter';
 import Timer from './Timer';
 
-const App: FC = () => (
+const App: VFC = () => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
