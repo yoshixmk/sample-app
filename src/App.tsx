@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter';
 import Timer from './Timer';
+import TextInput from './TextInput';
 
 const App: VFC = () => (
   <div className="App">
@@ -22,6 +23,7 @@ const App: VFC = () => (
     </header>
     <Counter />
     <Timer limit={60} />
+    <TextInput />
   </div>
 );
 

@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, VFC } from 'react';
+import { useEffect, useState, useMemo, VFC, useCallback } from 'react';
 import { Button, Card, Icon, Statistic } from 'semantic-ui-react';
 import { getPrimes } from './utils/math-tool';
 import './Timer.css';
@@ -6,7 +6,7 @@ import './Timer.css';
 const Timer: VFC<{ limit: number }> = ({ limit }) => {
   const [timeLeft, setTimeLeft] = useState(limit);
   const primes = useMemo(() => getPrimes(limit), [limit]);
-  const reset = (): void => setTimeLeft(limit);
+  const reset = useCallback((): void => setTimeLeft(limit), [limit]);
   const tick = (): void => setTimeLeft((t) => t - 1);
   useEffect(() => {
     const timerId = setInterval(tick, 1000);
@@ -15,8 +15,8 @@ const Timer: VFC<{ limit: number }> = ({ limit }) => {
   }, []);
 
   useEffect(() => {
-    if (timeLeft === 0) setTimeLeft(limit);
-  }, [timeLeft, limit]);
+    if (timeLeft === 0) reset();
+  }, [timeLeft, reset]);
 
   return (<Card>
     <Statistic className="number-board">
