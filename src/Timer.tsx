@@ -1,8 +1,11 @@
-import { useEffect, useState, VFC } from 'react';
+import { useEffect, useState, useMemo, VFC } from 'react';
 import { Button, Card, Icon, Statistic } from 'semantic-ui-react';
+import { getPrimes } from './utils/math-tool';
+import './Timer.css';
 
 const Timer: VFC<{ limit: number }> = ({ limit }) => {
   const [timeLeft, setTimeLeft] = useState(limit);
+  const primes = useMemo(() => getPrimes(limit), [limit]);
   const reset = (): void => setTimeLeft(limit);
   const tick = (): void => setTimeLeft((t) => t - 1);
   useEffect(() => {
@@ -16,7 +19,9 @@ const Timer: VFC<{ limit: number }> = ({ limit }) => {
   }, [timeLeft, limit]);
 
   return (<Card>
-    <Statistic className="number-board"> <Statistic.Label>time</Statistic.Label> <Statistic.Value>{timeLeft}</Statistic.Value>
+    <Statistic className="number-board">
+      <Statistic.Label>time</Statistic.Label>
+      <Statistic.Value className={primes.includes(timeLeft) ? 'prime-number' : undefined}>{timeLeft}</Statistic.Value>
     </Statistic>
     <Card.Content>
       <Button color="red" fluid onClick={reset}> <Icon name="redo" />
