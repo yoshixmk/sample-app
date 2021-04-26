@@ -1,7 +1,6 @@
 import React, { VFC } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter';
 import Timer from './Timer';
 import TextInput from './TextInput';
 
@@ -21,7 +20,6 @@ const App: VFC = () => (
         Learn React
       </a>
     </header>
-    <Counter />
     <Timer limit={60} />
     <TextInput />
   </div>
